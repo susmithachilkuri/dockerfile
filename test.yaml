@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: TestPOC2
+  namespace:TestPOC2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: TestPOC2
+  template:
+    metadata:
+      labels:
+        app: TestPOC2
+    spec:
+      containers:
+      - name: TestPOC2
+        image: chilkuri1296/poc2
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80

@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: TestPOC2
-  namespace:TestPOC2
+  namespace: TestPOC2
 spec:
   replicas: 1
   selector:

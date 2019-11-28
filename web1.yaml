@@ -1,9 +1,9 @@
-apiVersion: v1
+apiVersion: extensions/v1beta1
 kind: Service
 metadata:
-  name: my-web
+  name: my-nginx-svc
   labels:
-    app: web
+    app: nginx
 spec:
   type: LoadBalancer
   ports:
@@ -12,26 +12,26 @@ spec:
     nodePort: 31256
     protocol: TCP
   selector:
-    app: web
+    app: nginx
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-web
+  name: my-nginx
   labels:
-    app: web
+    app: nginx
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web
+      app: nginx
   template:
     metadata:
       labels:
-        app: web
+        app: nginx
     spec:
       containers:
-      - name: web1
-        image: susmitha1296/poc2
+      - name: nginx
+        image: chilkuri1296/test
         ports:
         - containerPort: 80

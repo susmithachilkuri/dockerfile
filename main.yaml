@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: web
-        image: chilkuri1296/main
+        image: chilkuri1296/newpoc
         ports:
         - containerPort: 80

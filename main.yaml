@@ -8,14 +8,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web
+      app: web1
   template:
     metadata:
       labels:
-        app: web
+        app: web1
     spec:
       containers:
       - name: web
-        image: chilkuri1296/main:12
+        image: chilkuri1296/main
         ports:
         - containerPort: 80
